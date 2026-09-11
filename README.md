@@ -1,4 +1,4 @@
-# Othello AI
+# Othello
 
 ![Java](https://img.shields.io/badge/Java-8%2B-blue.svg)  
 ![Build](https://img.shields.io/badge/build-javac%20%2B%20make-green.svg)  
