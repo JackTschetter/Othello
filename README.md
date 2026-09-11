@@ -44,31 +44,6 @@ I was also the only student to create GUI's for all my projects. I did this beca
 
 ---
 
-## Project Goals
-
-The main goal of this project is to demonstrate both classical AI search and practical software engineering.
-
-The AI goals are:
-
-- Model Othello as a deterministic, two-player, zero-sum game.
-- Generate legal moves from arbitrary board states.
-- Apply moves and flip bracketed disks according to the rules of Othello.
-- Implement depth-limited minimax search.
-- Improve minimax with alpha-beta pruning.
-- Evaluate non-terminal board positions with a multi-factor heuristic.
-- Support AI self-play and simulation from the command line.
-
-The software engineering goals are:
-
-- Keep game rules independent from the GUI.
-- Make the project build with plain `javac`.
-- Avoid external runtime dependencies.
-- Provide both GUI and CLI entry points.
-- Add focused tests for rules, game flow, AI behavior, and rendering.
-- Package the repository so it is easy to inspect for hiring, research outreach, and future extension.
-
----
-
 ## Tools Used
 
 - **Programming language**: Java
