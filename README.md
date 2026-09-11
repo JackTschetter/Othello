@@ -8,10 +8,6 @@
   <img src="assets/othello-gui.png" alt="Othello AI Swing GUI showing the starting board, legal move hints, score tracking, and configurable AI opponents" width="900">
 </p>
 
-<p align="center">
-  <em>Java Swing Othello interface with legal move hints, score tracking, undo support, and configurable AI opponents.</em>
-</p>
-
 ## Table of Contents
 
 - [About](#about)
