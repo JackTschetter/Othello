@@ -36,11 +36,11 @@
 
 ## About
 
-This repository is a Java implementation of Othello, also known as Reversi, with a playable Swing GUI, a command-line interface, and AI opponents based on minimax search and alpha-beta pruning.
+A Java native implementation of Othello, trademark Reversi. The code supports a GUI with options for both human and computer players. The computer player implements 4 algorithms. Minimax depth 2, Alpha Beta depth 3,  Alpha Beta depth 4, and Alpha Beta depth 5. There is also an option for "Random" which "randomly" selects from 1 of these 4. The computer can play against itself or against a human player.
 
-The project began as a CSCI 5511 Artificial Intelligence assignment at the University of Minnesota. The original version was a command-line Java project focused primarily on the search problem. This version rebuilds the project into a more complete software artifact: a reusable game engine, a polished GUI, CLI simulation support, and a lightweight test harness.
+Originally created for the course CSCI 5511 (Artificial Intelligence I) at University of Minnesota Twin Cities. I took this course during the third year of my undergrad. I was noted for being the only student in the course who used Java for the projects. Everyone else used Python. I preferred Java due to, what I perceive as, its more explicit rules and sublime logic. 
 
-Othello is a useful AI demonstration because the rules are compact but the game tree grows quickly. That makes it a natural fit for adversarial search, heuristic evaluation, pruning, and empirical comparison between computer players.
+I was also the only student to create GUI's for all my projects. I did this because I enjoy visuals and to challenge myself. 
 
 ---
 
