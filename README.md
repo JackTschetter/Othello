@@ -4,6 +4,14 @@
 ![Build](https://img.shields.io/badge/build-javac%20%2B%20make-green.svg)  
 ![AI](https://img.shields.io/badge/AI-minimax%20%2B%20alpha--beta-purple.svg)
 
+<p align="center">
+  <img src="assets/images/othello-gui.png" alt="Othello AI Swing GUI showing the starting board, legal move hints, score tracking, and configurable AI opponents" width="900">
+</p>
+
+<p align="center">
+  <em>Java Swing Othello interface with legal move hints, score tracking, undo support, and configurable AI opponents.</em>
+</p>
+
 ## Table of Contents
 
 - [About](#about)
