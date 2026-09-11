@@ -60,8 +60,32 @@ I was also the only student to create GUI's for all my projects. I did this beca
 No JavaFX, Maven, Gradle, or third-party libraries are required.
 
 ---
+## Background : Othello
 
-## Getting Started
+### Objective
+
+### Board and Coordinates
+
+### Legal Moves
+
+### Disk Flipping
+
+### Passing and End Conditions
+---
+## Minimax Search and Alpha-Beta Pruning
+
+### Othello as an Adversarial Search Problem
+
+### Minimax Search
+
+### Alpha-Beta Pruning
+
+### Heuristic Evaluation
+
+### Supported Strategies
+---
+
+## Getting Started (TODO: Remove this section)
 
 ### Prerequisites
 
