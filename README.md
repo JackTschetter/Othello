@@ -425,6 +425,9 @@ The original GUI project also contained checkers-era model logic from an earlier
 ---
 
 ## Acknowledgments
+• Andy Exley (awesome professor)
+• Aadesh Salecha (awesome tutor) 
+• Properly cite the course textbook.
 
 This project was originally inspired by CSCI 5511 Artificial Intelligence at the University of Minnesota.
 
