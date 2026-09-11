@@ -5,7 +5,7 @@
 ![AI](https://img.shields.io/badge/AI-minimax%20%2B%20alpha--beta-purple.svg)
 
 <p align="center">
-  <img src="assets/images/othello-gui.png" alt="Othello AI Swing GUI showing the starting board, legal move hints, score tracking, and configurable AI opponents" width="900">
+  <img src="assets/othello-gui.png" alt="Othello AI Swing GUI showing the starting board, legal move hints, score tracking, and configurable AI opponents" width="900">
 </p>
 
 <p align="center">
