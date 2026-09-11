@@ -93,6 +93,39 @@ No JavaFX, Maven, Gradle, or third-party libraries are required.
 
 ## Project Architecture
 
+### Code Organization
+
+```text
+.
+|-- assets
+|   `-- images
+|       `-- othello-gui.png
+|-- Makefile
+|-- README.md
+`-- src
+    |-- cli
+    |   `-- Main.java
+    |-- logic
+    |   |-- MoveGenerator.java
+    |   `-- MoveLogic.java
+    |-- model
+    |   |-- Board.java
+    |   |-- ComputerPlayer.java
+    |   |-- Game.java
+    |   |-- Heuristics.java
+    |   |-- HumanPlayer.java
+    |   |-- Move.java
+    |   |-- Player.java
+    |   `-- RandomPlayer.java
+    |-- test
+    |   `-- OthelloRulesTest.java
+    `-- ui
+        |-- Main.java
+        |-- OptionPanel.java
+        |-- OthelloBoard.java
+        `-- OthelloWindow.java
+```
+
 ## Building and Running
 
 ## Future Work
