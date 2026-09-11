@@ -49,7 +49,7 @@ I was also the only student to create GUI's for all my projects. I did this beca
 - **Programming language**: Java
 - **GUI toolkit**: Java Swing
 - **Build tooling**: `make`, `javac`
-- **AI techniques**: minimax search, alpha-beta pruning, heuristic board evaluation
+- **AI (Search) Algorithms**: minimax search, alpha-beta pruning, heuristic board evaluation
 - **Testing approach**: lightweight Java test harness with assertions implemented in code
 - **Supported runtime**: JDK 8 or newer
 
