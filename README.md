@@ -399,6 +399,6 @@ To clean the generated build output you can run `make clean`. This removes the g
 ## Acknowledgments
 Project created during my time as a student in CSCI 5511 (Artificial Intelligence I) at UMN Twin Cities. I would like to acknowledge the following people.<br>
 
-+ **Andy Exley:** My professor for 5511. 
+**Andy Exley:** My professor for 5511. 
 
-+ **Aadesh Salecha:** My tutor for computer science during this time. 
+**Aadesh Salecha:** My tutor for computer science during this time.
