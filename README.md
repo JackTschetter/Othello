@@ -211,6 +211,85 @@ This matters because raw disk count alone is often misleading in Othello. Early 
 ```
 
 ## Building and Running
+### Requirements
+This project requires Java Development Kit (JDK) 8 or newer.<br>
+
+This project does not require Maven, Gradle, JavaFX or any other third party libraries.<br>
+
+To check that Java is available you can use<br>
+
+```bash
+java -version
+javac -version
+```
+
+### Build
+To build you can simply use `make`. The project includes a provided [`Makefile`](Makefile).<br>
+
+From the repository root simply run `make build`.<br>
+
+The build target compiles every `.java` file under `src/` into the `out/` directory using `javac -Xlint:all`.<br>
+
+If for some reason you do not want to use `make` the equivalent command is<br>
+
+```bash
+mkdir -p out
+javac -Xlint:all -d out $(find src -name "*.java")
+```
+
+**NOTE:** Jacks recommendation is to use the provided Makefile.
+
+### Run the GUI
+To run the GUI you can simply use `make gui`. This will build the project and launch the Swing GUI through `src/ui/Main.java`.<br>
+
+The GUI supports human players, random players, minimax (computer) players, and alpha-beta (computer) players with several depths.
+
+### Run the CLI
+To run the CLI you can simply use `make cli`. This builds the project and launches the command line version through `src/cli/Main.java`.<br>
+
+In interactive CLI mode, moves are entered as row-column pairs. `2 3`. Rows and columns are zero-indexed in the CLI.<br>
+
+**Note:** CLI is boring. Use the GUI version.
+
+### Run Simulations
+This project also supports simulations. Simulation mode runs complete games between automated players. Run simulations using:<br>
+
+```bash
+make build
+java -cp out cli.Main --simulate 10 --black alphabeta:5 --white alphabeta:4
+```
+
+Supported player values are:<br>
++ `human`
++ `random`
++ `minimax:N`
++ `ai:N`
++ `alphabeta:N`
+
+Examples:<br>
+
+```bash
+java -cp out cli.Main --simulate 20 --black alphabeta:4 --white random
+java -cp out cli.Main --simulate 5 --black minimax:2 --white alphabeta:3
+```
+
+### Run Tests
+This project also contains a simple test harness. The tests live in [`src/test/OthelloRulesTest.java`](src/test/OthelloRulesTest.java). You can run the tests with `make test`.<br>
+
+The test harness checks:<br>
++ Standard initial position.
++ Initial legal moves.
++ Disk flipping after a legal move.
++ Illegal move rejection.
++ Automatic pass handling.
++ Alpha-beta move legality.
++ Complete simulated game termination.
++ Basic offscreen GUI render smoke test.
+
+I deliberately kept the tests lightweight and dependency-free. They are not a substitute for a full JUnit suite, but they cover the most important correctness risks for this project.
+
+### Clean Build Output
+To clean the generated build output you can run `make clean`. This removes the generated `out/` directory.
 
 ## Future Work
 
