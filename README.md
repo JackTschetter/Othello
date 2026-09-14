@@ -192,6 +192,7 @@ At a high level:
 The most important design choice is that the GUI does not contain Othello rules. It displays the board, collects user input, and delegates game behavior to the model layer.
 
 ### Code Organization
+The code is architectured as follows. 
 
 ```text
 .
@@ -223,13 +224,48 @@ The most important design choice is that the GUI does not contain Othello rules.
         |-- OthelloBoard.java
         `-- OthelloWindow.java
 ```
+The `model` package contains the core game logic.<b>
+
+The `ui` package contains the Swing interface.<br>
+
+The `cli` package contains the command-line entry point and simulation runner.<br>
+
+The `test` package contains the lightweight test harness.
+
 ### Model Layer
+The model layer owns the rules and state of the game.
++ [`Board.java`](src/model/Board.java): represents the 8x8 board, stores disk values, generates legal moves, applies moves, flips disks, counts disks, detects winners, and serializes board states.
++ [`Game.java`](src/model/Game.java): manages the current board, current player, move execution, pass handling, undo history, scores, game-over detection, and user-facing status messages.
++ [`Move.java`](src/model/Move.java): represents a row-column move or pass move.
++ [`Player.java`](src/model/Player.java): defines the common interface for human and computer-controlled players.
+
+This separation keeps the Othello rules independent from the GUI and CLI.
 
 ### AI Layer
+The AI layer is built on top of the shared model.
++ [`ComputerPlayer.java`](src/model/ComputerPlayer.java): implements depth-limited minimax search and optional alpha-beta pruning.
++ [`Heuristics.java`](src/model/Heuristics.java): evaluates board positions using mobility, coin parity, corner control, positional weights, and frontier disks.
++ [`RandomPlayer.java`](src/model/RandomPlayer.java): selects a random legal move.
++ [`HumanPlayer.java`](src/model/HumanPlayer.java): marks a player as human-controlled.
+`ComputerPlayer` copies board states before searching so speculative AI moves do not mutate the real game state. This is what allows the GUI and CLI to safely ask an AI player for a move.
 
 ### Interface Layer
+This project has two user-facing entry points.
+
++ [`src/ui/Main.java`](src/ui/Main.java): launches the Swing GUI.
++ [`src/cli/Main.java`](src/cli/Main.java): launches the command-line interface and simulation mode.
+  
+The Swing GUI is split into focused classes:
+
++ [`OthelloWindow.java`](src/ui/OthelloWindow.java): owns the main window, layout, game object, player selection, turn updates, new game, undo, and computer-move scheduling.
++ [`OthelloBoard.java`](src/ui/OthelloBoard.java): draws the board, disks, coordinate labels, legal move hints, and handles mouse input.
++ [`OptionPanel.java`](src/ui/OptionPanel.java): displays match controls, player dropdowns, score, turn, legal move count, and position statistics.
+
+The CLI supports both interactive play and automated simulations between AI players.
 
 ### Testing
+Tests live in [`src/test/OthelloRulesTest.java`](src/test/OthelloRulesTest.java).
+The test harness checks the most important correctness paths.
 
 ## Building and Running
 ### Requirements
