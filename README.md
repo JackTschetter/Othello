@@ -158,7 +158,7 @@ For non-terminal positions, the heuristic combines several strategic signals:
 | Frontier disks | Disks adjacent to empty squares are often vulnerable. |
 
 <p align="center">
-  <img src="assets/images/heuristic-evaluation.png" alt="Othello heuristic evaluation diagram showing corners, mobility, frontier disks, and position value" width="760">
+  <img src="src/assets/images/heuristic-evaluation.png" alt="Othello heuristic evaluation diagram showing corners, mobility, frontier disks, and position value" width="760">
 </p>
 
 <p align="center">
