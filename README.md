@@ -179,8 +179,40 @@ score =
 The `coinWeight` changes based on the number of empty squares. When fewer than 16 empty squares remain, coin parity becomes more important; otherwise, mobility, corners, positional strength, and frontier exposure carry more of the evaluation.
 
 This matters because raw disk count alone is often misleading in Othello. Early in the game, having more disks can be a weakness if those disks are unstable or give the opponent more legal moves.
+
 ### Supported Strategies
 
+This project supports human players, random move selection, minimax search, and alpha-beta search. All player types share the same abstract base class, [`Player`](src/model/Player.java), which defines `isHuman()` and `chooseMove(Game game)`.
+
+| Strategy | Class | Behavior |
+| --- | --- | --- |
+| Human | [`HumanPlayer`](src/model/HumanPlayer.java) | Marks a player as human-controlled. The GUI or CLI supplies the move. |
+| Random | [`RandomPlayer`](src/model/RandomPlayer.java) | Selects uniformly from the current legal moves. |
+| Minimax | [`ComputerPlayer`](src/model/ComputerPlayer.java) | Runs depth-limited minimax search without pruning. |
+| Alpha-beta | [`ComputerPlayer`](src/model/ComputerPlayer.java) | Runs the same depth-limited search with alpha-beta pruning enabled. |
+
+The GUI exposes the following player options in [`OptionPanel.java`](src/ui/OptionPanel.java):
+
++ `Human`
++ `Random`
++ `Minimax depth 2`
++ `Alpha-beta depth 3`
++ `Alpha-beta depth 4`
++ `Alpha-beta depth 5`
+
+The CLI supports flexible player specifications in [`src/cli/Main.java`](src/cli/Main.java):
+
++ `human`
++ `random`
++ `minimax:N`
++ `ai:N`
++ `alphabeta:N`
+
+For example:
+
+```bash
+java -cp out cli.Main --simulate 10 --black alphabeta:5 --white alphabeta:4
+```
 ---
 
 ## Project Architecture
