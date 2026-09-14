@@ -181,22 +181,15 @@ This matters because raw disk count alone is often misleading in Othello. Early 
 This project is organized around a shared Othello game model. The GUI, CLI, simulations, and tests all use the same underlying rules engine, so move validation and game behavior stay consistent across every entry point.<br>
 
 At a high level:
+<p align="center">
+  <img
+    src="src/assets/images/system-architecture.png"
+    alt="Othello system architecture from user interfaces through game logic, board state, player implementations, and AI heuristics"
+    width="900"
+  >
+</p>
 
-```text
-GUI / CLI / Tests
-        |
-        v
-Game
-        |
-        v
-Board + Move
-        |
-        v
-Player implementations
-        |
-        v
-ComputerPlayer + Heuristics
-```
+The most important design choice is that the GUI does not contain Othello rules. It displays the board, collects user input, and delegates game behavior to the model layer.
 
 ### Code Organization
 
