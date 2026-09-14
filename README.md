@@ -69,7 +69,7 @@ No JavaFX, Maven, Gradle, or third-party libraries are required.
 ## Background : Othello
 
 ### Objective
-Othello –– Also known as Reverse –– is a 2 player strategy game played on an 8x8 board with disks that are black on one side and white on the other.<br>
+Othello –– Also known as Reversi –– is a 2 player strategy game played on an 8x8 board with disks that are black on one side and white on the other.<br>
 
 The game begins with 4 disks in the center of the board (2 black and 2 white). Black moves first. Players take turns placing disks on the empty squares with their color facing up. The objective is to finish the game with more disks showing your color than your opponent’s.
 
