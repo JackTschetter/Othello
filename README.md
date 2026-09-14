@@ -224,7 +224,7 @@ The code is architectured as follows.
         |-- OthelloBoard.java
         `-- OthelloWindow.java
 ```
-The `model` package contains the core game logic.<b>
+The `model` package contains the core game logic.<br>
 
 The `ui` package contains the Swing interface.<br>
 
