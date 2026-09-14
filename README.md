@@ -101,6 +101,14 @@ After a legal move is made, every captured disk is flipped to the current player
 
 For example, if Black places a disk at one end of a line containing one or more White disks followed by another Black disk, all enclosed White disks are flipped to Black.<br>
 
+<p align="center">
+  <img src="src/assets/images/disk-flipping.png" alt="Before and after Othello move showing captured disks flipping from white to black" width="720">
+</p>
+
+<p align="center">
+  <em>After a legal move, every captured disk is flipped to the current player's color.</em>
+</p>
+
 ### Passing and End Conditions
 If a player has no legal moves, they must pass their turn. The game continues with the other player if that player has at least one legal move.<br>
 
