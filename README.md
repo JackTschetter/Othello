@@ -200,6 +200,7 @@ ComputerPlayer + Heuristics
 
 ### Code Organization
 
+```text
 .
 |-- assets
 |   `-- images
