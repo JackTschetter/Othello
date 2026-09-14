@@ -178,7 +178,24 @@ This matters because raw disk count alone is often misleading in Othello. Early 
 ## Project Architecture
 
 ### System Overview
+This project is organized around a shared Othello game model. The GUI, CLI, simulations, and tests all use the same underlying rules engine, so move validation and game behavior stay consistent across every entry point.<br>
 
+At a high level:
+
+```text
+GUI / CLI / Tests
+        |
+        v
+Game
+        |
+        v
+Board + Move
+        |
+        v
+Player implementations
+        |
+        v
+ComputerPlayer + Heuristics
 ### Code Organization
 
 ```text
