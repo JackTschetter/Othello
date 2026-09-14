@@ -83,7 +83,7 @@ Disks can be captured along any of the eight directions extending from a square:
 
 ### Legal Moves
 <p align="center">
-  <img src="assets/images/legal-move.png" alt="Legal Othello move showing a newly placed black disk capturing white disks in a straight line" width="720">
+  <img src="src/assets/images/legal-move.png" alt="Legal Othello move showing a newly placed black disk capturing white disks in a straight line" width="720">
 </p>
 
 <p align="center">
