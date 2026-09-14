@@ -82,6 +82,14 @@ Disks can be captured along any of the eight directions extending from a square:
 + Diagonally
 
 ### Legal Moves
+<p align="center">
+  <img src="assets/images/legal-move.png" alt="Legal Othello move showing a newly placed black disk capturing white disks in a straight line" width="720">
+</p>
+
+<p align="center">
+  <em>A legal move must bracket at least one opposing disk in a horizontal, vertical, or diagonal line.</em>
+</p>
+
 On each turn, a player places one disk on an empty square. A move is legal only if it captures at least one opposing disk.<br>
 
 To make a capture, the newly placed disk and another disk of the current player’s color must surround an uninterrupted line of one or more opposing disks. A single move may capture disks in multiple directions.<br>
