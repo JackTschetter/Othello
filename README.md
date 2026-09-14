@@ -388,24 +388,6 @@ I deliberately kept the tests lightweight and dependency-free. They are not a su
 ### Clean Build Output
 To clean the generated build output you can run `make clean`. This removes the generated `out/` directory.
 
-## Future Work
-
-This project demonstrates classical adversarial search, but it is not intended to be a tournament-strength Othello engine.
-
-Useful extensions would include:
-
-- Add a transposition table to cache repeated board states.
-- Add iterative deepening so the AI can search until a time budget expires.
-- Add a stronger endgame solver when few empty squares remain.
-- Add an opening book.
-- Add better empirical evaluation across many games and search depths.
-- Tune heuristic weights experimentally.
-- Compare minimax, alpha-beta, Monte Carlo Tree Search, and reinforcement-learning approaches.
-- Add JUnit tests if the project is expanded further.
-- Add a packaged release target for easier desktop distribution.
-
-The current version focuses on correctness, readability, reproducibility, and a clear demonstration of the core AI techniques.
-
 ---
 
 ## Acknowledgments
