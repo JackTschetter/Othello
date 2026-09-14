@@ -390,20 +390,15 @@ To clean the generated build output you can run `make clean`. This removes the g
 
 ---
 
+## References
+
+[1] Stuart Russell and Peter Norvig, *Artificial Intelligence: A Modern Approach*, 4th ed., Pearson, 2021.
+
+---
+
 ## Acknowledgments
+Project created during my time as a student in CSCI 5511 (Artificial Intelligence I) at UMN Twin Cities. I would like to acknowledge the following people.<br>
 
-• Andy Exley (awesome professor)
-• Aadesh Salecha (awesome tutor) 
-• Properly cite the course textbook.
++ **Andy Exley:** My professor for 5511. 
 
-This project was originally inspired by CSCI 5511 Artificial Intelligence at the University of Minnesota.
-
-The implementation reflects standard ideas from adversarial search:
-
-- Minimax search
-- Alpha-beta pruning
-- Depth-limited search
-- Heuristic evaluation
-- State-space modeling for deterministic games
-
-Othello/Reversi remains a classic example because it is easy to explain, quick to play, and rich enough to reward careful search and evaluation design.
++ **Aadesh Salecha:** My tutor for computer science during this time. 
