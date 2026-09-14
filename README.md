@@ -125,18 +125,51 @@ Each player then counts the disks showing their color. The player with the most 
 Othello is a classic example of an adversarial search problem. The 2 players have directly opposing goals. The board state is fully observable, and every move changes the set of future options available to both sides.<br>
 
 This search problem can be modeled using the standard components. Implementation code can be viewed under `src/model`.
-+ **State**: the board configuration and the player to move.
-+ **Actions**: all legal disk placements for the current player.
-+ **Transition function**: place a disk and flip all bracketed opponent disks.
-+ **Terminal test**: the board is full or neither player has a legal move.
-+ **Utility**: win, loss, draw, or disk differential at terminal states.
++ **State**: The current board configuration and the current player stored by Game (e.g., the player to move).
++ **Actions**: All legal disk placements for the current player. Returned by `Board.lrgalMoves(color)`.
++ **Transition Function**: place a disk and flip all bracketed opponent disks.
++ **Terminal Test**: the board is full or neither player has a legal move.
++ **Utility**: win, loss, draw, or disk differential at terminal states.<br>
+
+The full game tree is too large to search exhaustively during normal play. Instead the computer player searches to a fixed depth and then evaluates the frontier positions using a heuristic function.
 
 ### Minimax Search
 
 ### Alpha-Beta Pruning
 
 ### Heuristic Evaluation
+The evaluation function lives in [`src/model/Heuristics.java`](src/model/Heuristics.java). It scores a board from the perspective of a given color.
 
+If the position is terminal, the heuristic returns a large disk-differential score:
+
+```text
+terminal score = disk differential * 100000
+```
+
+For non-terminal positions, the heuristic combines several strategic signals:
+
+| Feature | Why it matters |
+| --- | --- |
+| Mobility | Compares how many legal moves the player has against the opponent. |
+| Coin parity | Compares disk counts. This receives more weight near the endgame. |
+| Corner control | Corners are stable because they cannot be flipped once taken. |
+| Positional weights | Uses a static 8x8 table where corners are highly valuable and risky squares near corners are penalized. |
+| Frontier disks | Disks adjacent to empty squares are often vulnerable. |
+
+The current weighted evaluation is:
+
+```text
+score =
+    coinWeight * coinParity
+  + 85 * mobility
+  + 275 * corners
+  + 8 * positional
+  + 15 * frontier
+```
+
+The `coinWeight` changes based on the number of empty squares. When fewer than 16 empty squares remain, coin parity becomes more important; otherwise, mobility, corners, positional strength, and frontier exposure carry more of the evaluation.
+
+This matters because raw disk count alone is often misleading in Othello. Early in the game, having more disks can be a weakness if those disks are unstable or give the opponent more legal moves.
 ### Supported Strategies
 
 ---
