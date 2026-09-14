@@ -177,6 +177,8 @@ This matters because raw disk count alone is often misleading in Othello. Early 
 
 ## Project Architecture
 
+### System Overview
+
 ### Code Organization
 
 ```text
@@ -209,6 +211,13 @@ This matters because raw disk count alone is often misleading in Othello. Early 
         |-- OthelloBoard.java
         `-- OthelloWindow.java
 ```
+### Model Layer
+
+### AI Layer
+
+### Interface Layer
+
+### Testing
 
 ## Building and Running
 ### Requirements
