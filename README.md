@@ -157,6 +157,14 @@ For non-terminal positions, the heuristic combines several strategic signals:
 | Positional weights | Uses a static 8x8 table where corners are highly valuable and risky squares near corners are penalized. |
 | Frontier disks | Disks adjacent to empty squares are often vulnerable. |
 
+<p align="center">
+  <img src="assets/images/heuristic-evaluation.png" alt="Othello heuristic evaluation diagram showing corners, mobility, frontier disks, and position value" width="760">
+</p>
+
+<p align="center">
+  <em>The heuristic evaluates more than disk count: corners, mobility, frontier disks, and positional value all influence the AI's score.</em>
+</p>
+
 The current weighted evaluation is:
 
 ```text
