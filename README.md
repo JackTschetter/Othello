@@ -69,14 +69,37 @@ No JavaFX, Maven, Gradle, or third-party libraries are required.
 ## Background : Othello
 
 ### Objective
+Othello –– Also known as Reverse –– is a 2 player strategy game played on an 8x8 board with disks that are black on one side and white on the other.<br>
+
+The game begins with 4 disks in the center of the board (2 black and 2 white). Black moves first. Players take turns placing disks on the empty squares with their color facing up. The objective is to finish the game with more disks showing your color than your opponent’s.
 
 ### Board and Coordinates
+The board contains 64 squares arranged in eight rows and eight columns. In my GUI columns are labeled **A-H**, and rows are labeled **1-8**. A square can easily be identified by a coordinate such as **D3** or **F5**.<br>
+
+Disks can be captured along any of the eight directions extending from a square:<br>
++ Horizontally
++ Vertically
++ Diagonally
 
 ### Legal Moves
+On each turn, a player places one disk on an empty square. A move is legal only if it captures at least one opposing disk.<br>
+
+To make a capture, the newly placed disk and another disk of the current player’s color must surround an uninterrupted line of one or more opposing disks. A single move may capture disks in multiple directions.<br>
+
+If placing a disk would not capture any opposing disks, the move is illegal.<br>
 
 ### Disk Flipping
+After a legal move is made, every captured disk is flipped to the current player’s color. Flipping occurs in every direction where opposing disks have been enclosed.<br>
+
+For example, if Black places a disk at one end of a line containing one or more White disks followed by another Black disk, all enclosed White disks are flipped to Black.<br>
 
 ### Passing and End Conditions
+If a player has no legal moves, they must pass their turn. The game continues with the other player if that player has at least one legal move.<br>
+
+The game ends when neither player can make a legal move. This usually occurs when the board is full, although the game may end earlier.<br>
+
+Each player then counts the disks showing their color. The player with the most disks wins. If both players have the same number of disks, the game ends in a draw.
+
 ---
 ## Minimax Search and Alpha-Beta Pruning
 
