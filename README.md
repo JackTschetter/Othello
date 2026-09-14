@@ -116,10 +116,20 @@ The game ends when neither player can make a legal move. This usually occurs whe
 
 Each player then counts the disks showing their color. The player with the most disks wins. If both players have the same number of disks, the game ends in a draw.
 
+**TODO:** Link the Othello rules doc I have saved on my old laptop.
+
 ---
 ## Minimax Search and Alpha-Beta Pruning
 
 ### Othello as an Adversarial Search Problem
+Othello is a classic example of an adversarial search problem. The 2 players have directly opposing goals. The board state is fully observable, and every move changes the set of future options available to both sides.<br>
+
+This search problem can be modeled using the standard components. Implementation code can be viewed under `src/model`.
++ **State**: the board configuration and the player to move.
++ **Actions**: all legal disk placements for the current player.
++ **Transition function**: place a disk and flip all bracketed opponent disks.
++ **Terminal test**: the board is full or neither player has a legal move.
++ **Utility**: win, loss, draw, or disk differential at terminal states.
 
 ### Minimax Search
 
@@ -128,6 +138,7 @@ Each player then counts the disks showing their color. The player with the most 
 ### Heuristic Evaluation
 
 ### Supported Strategies
+
 ---
 
 ## Project Architecture
@@ -188,6 +199,7 @@ The current version focuses on correctness, readability, reproducibility, and a 
 ---
 
 ## Acknowledgments
+
 • Andy Exley (awesome professor)
 • Aadesh Salecha (awesome tutor) 
 • Properly cite the course textbook.
