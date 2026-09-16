@@ -276,14 +276,16 @@ public class OthelloBoard extends JPanel {
         int topBaseline = board.y - FRAME_WIDTH - COORDINATE_GAP;
         int leftLabelRightEdge = board.x - FRAME_WIDTH - COORDINATE_GAP;
         for (int index = 0; index < Board.SIZE; index++) {
-            String label = Integer.toString(index);
-            int labelWidth = g.getFontMetrics().stringWidth(label);
-            int columnX = board.x + index * tile + tile / 2 - labelWidth / 2;
+            String columnLabel = Character.toString((char) ('A' + index));
+            String rowLabel = Integer.toString(index + 1);
+            int columnLabelWidth = g.getFontMetrics().stringWidth(columnLabel);
+            int rowLabelWidth = g.getFontMetrics().stringWidth(rowLabel);
+            int columnX = board.x + index * tile + tile / 2 - columnLabelWidth / 2;
             int rowY = board.y + index * tile
                     + (tile + g.getFontMetrics().getAscent() - g.getFontMetrics().getDescent()) / 2;
 
-            g.drawString(label, columnX, topBaseline);
-            g.drawString(label, leftLabelRightEdge - labelWidth, rowY);
+            g.drawString(columnLabel, columnX, topBaseline);
+            g.drawString(rowLabel, leftLabelRightEdge - rowLabelWidth, rowY);
         }
     }
 
