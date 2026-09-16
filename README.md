@@ -155,7 +155,44 @@ for each legal move:
     score = search(child, opponent, depth - 1, color)
 ```
 
+Then choose one of the moves with the best score.<br>
+
+The recursive `search(...)` method alternates between two roles:
++ **MAX:** the original computer player, trying to maximize the heuristic score.
++ **MIN:** the opponent, trying to minimize that score.
+
+The code decides which role applies with:
+
+```bash
+boolean maximizing = playerToMove == maximizingColor;
+```
+
+The searching stops when one of these conditions is reached
++ The depth limit reaches `0`
++ The board is full
++ Neither player has a legal move
+
+At that point, the board is evaluated with:
+
+```bash
+Heuristics.evaluate(board, maximizingColor)
+```
+
+The code also handles Othello's pass rule during search. If the current player has no legal moves, `search(...)` recursively passes the turn to the opponent and continues with one less remaining depth.<br>
+
+If multiple moves receive the same best score, `chooseMove(...)` stores all tied moves in bestMoves and randomly selects one. This keeps repeated games from always following the same path when several moves are evaluated equally.
+
 ### Alpha-Beta Pruning
+**Alpha-Beta Pruning** is an optimization on top of the minimax. It is **NOT** a fundamentally new algorithm. It does not change the basic idea of the search. The computer still assumes that one side is maximizing and the other side is minimizing.<br>
+
+The optimization is that alpha-beta pruning avoids searching branches that can no longer affect the final decision.<br>
+
+This implementation uses the same recursive `search(...)` method living in [`src/model/ComputerPlayer.java`](src/model/ComputerPlayer.java). Pruning is enabled only when the player was created with:<br>
+
+```bash
+ComputerPlayer.Strategy.ALPHA_BETA
+```
+
 
 ### Heuristic Evaluation
 The evaluation function lives in [`src/model/Heuristics.java`](src/model/Heuristics.java). It scores a board from the perspective of a given color.
