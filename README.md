@@ -133,7 +133,27 @@ This search problem can be modeled using the standard components. Implementation
 The full game tree is too large to search exhaustively during normal play. Instead the computer player searches to a fixed depth and then evaluates the frontier positions using a heuristic function.
 
 ### Minimax Search
-This is a perfect case for some minimax search. The **Minimax algorithm** recursively explores the game tree to determine the "best" move.
+This is a perfect case for some minimax search. The **Minimax algorithm** recursively explores the game tree to determine the "best" move.<br>
+
+<p align="center">
+  <img src="src/assets/images/minimax.png" alt="Othello minimax search tree with MAX and MIN layers, heuristic scores, and alpha-beta pruned branches" width="820">
+</p>
+
+<p align="center">
+  <em>Minimax evaluates possible move sequences as a game tree. Alpha-beta pruning skips branches that cannot change the final decision.</em>
+</p>
+
+The implementation code lives in [`src/model/ComputerPlayer.java`](src/model/ComputerPlayer.java).<br>
+
+The entry point is `chooseMove(Game game)`. This method gets the current board, finds the legal moves with `board.legalMoves(color)`, applies each candidate move to a copied board, and calls the recursive `search(...)` method to score the resulting position.<br>
+
+At a high level, the code does this:
+```bash
+for each legal move:
+    child = board.copy()
+    child.applyMove(color, move)
+    score = search(child, opponent, depth - 1, color)
+```
 
 ### Alpha-Beta Pruning
 
