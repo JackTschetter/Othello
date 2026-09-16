@@ -39,7 +39,6 @@
   - [Run Simulations](#run-simulations)
   - [Run Tests](#run-tests)
   - [Clean Build Output](#clean-build-output)
-- [Future Work](#future-work)
 - [Acknowledgments](#acknowledgments)
 
 ---
