@@ -193,6 +193,35 @@ This implementation uses the same recursive `search(...)` method living in [`src
 ComputerPlayer.Strategy.ALPHA_BETA
 ```
 
+This method tracks two bounds:
++ `alpha:` The best score MAX can already guarantee.
++ `beta:` The best score MIN can already guarantee.
+
+At the top level, `chooseMove(...)` starts the search with the widest possible bounds:
+```bash
+Integer.MIN_VALUE, Integer.MAX_VALUE
+```
+
+Then inside the maximizing branch, the code updates `alpha:`
+
+```bash
+  alpha = Math.max(alpha, value);
+  if (alpha >= beta) {
+      break;
+  }
+```
+
+Inside the minimizing branch, the code updates `beta`.
+```bash
+beta = Math.min(beta, value);
+if (alpha >= beta) {
+    break;
+}
+```
+
+When alpha >= beta, the remaining sibling moves cannot improve the result for the current decision, so the loop stops early.<br>
+
+The implementation also uses move ordering before recursion. The helper method `orderMoves(...)` copies the board, applies each candidate move, evaluates the resulting position with `Heuristics.evaluate(...)`, and searches the better-looking moves first. This does not change the minimax model, but it helps alpha-beta pruning work better because strong moves tighten the bounds earlier.
 
 ### Heuristic Evaluation
 The evaluation function lives in [`src/model/Heuristics.java`](src/model/Heuristics.java). It scores a board from the perspective of a given color.
